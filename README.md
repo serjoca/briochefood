@@ -129,7 +129,7 @@ mutation {
 
 ```javascript
 mutation {
-	cancelOrder(orderId: 2) {
+	cancelOrder(orderId: 1) {
 		order {
 			id
 			status
