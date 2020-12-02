@@ -52,76 +52,76 @@ mutation {
 
 2. When creating a bakery, it will receive a `recipientId` from Pagarme. Now we can create two products, bread and milk, by using the following GraphQL mutation:
 
-```javascript
+```typescript
 mutation {
-	createBread: mutateProduct(bakeryId: 1, name: "Pão de Milho", price: 4.5) {
-		product {
-			id
-			name
-			price
-			bakeryId
-			bakery {
-				id
-				name
-			}
-		}
-	}
+  createBread: mutateProduct(bakeryId: 1, name: "Pão de Milho", price: 4.5) {
+    product {
+      id
+      name
+      price
+      bakeryId
+      bakery {
+        id
+        name
+      }
+    }
+  }
   createMilk: mutateProduct(bakeryId: 1, name: "Milk", price: 6.5) {
-		product {
-			id
-			name
-			price
-			bakeryId
-			bakery {
-				id
-				name
-			}
-		}
-	}
+    product {
+      id
+      name
+      price
+      bakeryId
+      bakery {
+        id
+        name
+      }
+    }
+  }
 }
 ```
 
 3. We can now create an order that will use both the bakery's id and the products that we created.
 
-```javascript
+```typescript
 mutation {
-	mutateOrder(
-		cardNumber: "4111111111111111"
-		cardCvv: "123"
-		cardExpirationDate: "0922"
-		cardHolderName: "Morpheus Fishburne"
-		name: "Trinity Moss"
-		country: "br"
-		state: "sp"
-		city: "Cotia"
-		neighborhood: "Rio Cotia"
-		street: "Rua Matrix"
-		streetNumber: "9999"
-		zipcode: "06714360"
-		bakeryId: 1
-		items: [{ productId: 1, quantity: 2 }, { productId: 2, quantity: 4 }]
-	) {
-		order {
-			id
-			status
-			totalPrice
-			transactionId
-			bakery {
-				id
-				name
-				recipientId
-			}
-			items {
-				id
-				quantity
-				product {
-					id
-					name
-					price
-				}
-			}
-		}
-	}
+  mutateOrder(
+    cardNumber: "4111111111111111"
+    cardCvv: "123"
+    cardExpirationDate: "0922"
+    cardHolderName: "Morpheus Fishburne"
+    name: "Trinity Moss"
+    country: "br"
+    state: "sp"
+    city: "Cotia"
+    neighborhood: "Rio Cotia"
+    street: "Rua Matrix"
+    streetNumber: "9999"
+    zipcode: "06714360"
+    bakeryId: 1
+    items: [{ productId: 1, quantity: 2 }, { productId: 2, quantity: 4 }]
+  ) {
+    order {
+      id
+      status
+      totalPrice
+      transactionId
+      bakery {
+        id
+        name
+        recipientId
+      }
+      items {
+        id
+        quantity
+        product {
+          id
+          name
+          price
+        }
+      }
+    }
+  }
 }
 ```
 
@@ -129,28 +129,28 @@ mutation {
 
 ```javascript
 mutation {
-	cancelOrder(orderId: 1) {
-		order {
-			id
-			status
-			totalPrice
-			transactionId
-			bakery {
-				id
-				name
-				recipientId
-			}
-			items {
-				id
-				quantity
-				product {
-					id
-					name
-					price
-				}
-			}
-		}
-	}
+  cancelOrder(orderId: 1) {
+    order {
+      id
+      status
+      totalPrice
+      transactionId
+      bakery {
+        id
+        name
+        recipientId
+      }
+      items {
+        id
+        quantity
+        product {
+          id
+          name
+          price
+        }
+      }
+    }
+  }
 }
 ```
 
