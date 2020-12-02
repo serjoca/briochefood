@@ -25,28 +25,28 @@ This application implements both mutations and queries. For a complete payment f
 
 1. Create a new bakery. You can do this by using the following GraphQL mutation on http://localhost:5000/graphql
 
-```javascript
+```typescript
 mutation {
-	mutateBakery(
-		bankCode: "341"
-		agencia: "0932"
-		agenciaDv: "5"
-		conta: "58054"
-		contaDv: "1"
-		documentNumber: "26268738888"
-		legalName: "Três Irmãos"
-		name: "Padaria Três Irmãos"
-	) {
-		bakery {
-			id
-			name
-			recipientId
-			products {
-				id
-				name
-			}
-		}
-	}
+  mutateBakery(
+    bankCode: "341"
+    agencia: "0932"
+    agenciaDv: "5"
+    conta: "58054"
+    contaDv: "1"
+    documentNumber: "26268738888"
+    legalName: "Três Irmãos"
+    name: "Padaria Três Irmãos"
+  ) {
+    bakery {
+      id
+      name
+      recipientId
+      products {
+        id
+        name
+      }
+    }
+  }
 }
 ```
 
