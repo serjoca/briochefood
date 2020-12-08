@@ -8,6 +8,15 @@ This app is intended to run with Docker and is composed of 4 basic entities (Bak
 
 - Docker
 - Docker Compose
+- Pagar.me Account
+
+
+## Setup
+
+Go to the **docker-compose.yml** file to change the server's environment variables to valid environment variables:
+
+- Change **PAGARME_API_KEY** from `YOUR_API_KEY` to your own pagarme API key.
+- Change **PAGARME_DEFAULT_RECIPIENT_ID** from `YOUR_DEFAULT_RECIPIENT_ID` to your own pagarme recipient id that will receive the transactions.
 
 ## Run
 
