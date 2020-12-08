@@ -22,9 +22,7 @@ services:
       - flask-db:/var/lib/mysql
 
   server:
-    container_name: skills_app
     build: .
-    hostname: skills_app
     ports:
       - "5000:5000"
     volumes: [".:/usr/src/app"]
